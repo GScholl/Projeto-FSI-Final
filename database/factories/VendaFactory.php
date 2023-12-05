@@ -24,7 +24,7 @@ class VendaFactory extends Factory
             'cliente_id' => Cliente::inRandomOrder()->first()->id,
             'data_compra' => $this->faker->dateTimeBetween('-1 year', 'now'),
             'valor' => $this->faker->randomFloat(2, 10, 1000),
-            'status' => $this->faker->randomElement(['P']),
+            'status' => $this->faker->randomElement(['F']),
         ];
     }
 }

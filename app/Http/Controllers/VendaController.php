@@ -33,8 +33,10 @@ class VendaController extends Controller
     }
     public function insere(Request $request)
     {
-        $venda = Venda::find($request->id);
-        $venda->id = $request->id;
+
+
+        $venda = new Venda();
+
         $venda->titulo = $request->titulo;
         $venda->descricao = $request->descricao;
         $venda->valor = $request->valor;
@@ -55,7 +57,17 @@ class VendaController extends Controller
         $venda->save();
         return redirect()->route('vendas.index')->with('sucesso', 'Venda editada com sucesso!');
     }
+    public function excluir($id){
 
+        $venda = Venda::find($id);
+        if ($venda->delete()) {
+
+            return redirect()->route('vendas.index')->with("sucesso", "Venda Excluida com sucesso");
+        }
+
+        return redirect()->route('vendas.index')->with("erro", "Venda não foi Excluida ");
+
+    }
     public function editar($id)
     {
         $venda = Venda::find($id);

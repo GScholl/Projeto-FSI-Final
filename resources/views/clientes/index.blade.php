@@ -9,9 +9,28 @@
 @section('content')
 
     <div class="container-fluid pb-3">
-        <a href="{{ route('clientes.pdf') }}" role="button" class="btn mb-5 btn-outline-danger"> <i class="fa fa-file"></i> Gerar
-            PDF</a>
-
+        <div class="d-flex w-100   justify-content-start">
+            <div> <a href="{{ route('clientes.pdf') }}" role="button" class="btn mb-5  btn-outline-danger"> <i
+                        class="fa fa-file"></i>
+                    Gerar
+                    PDF</a>
+            </div>
+            <div>
+                <a href="{{ route('clientes.inserir') }}" role="button" class="btn mb-5  ml-2 btn-outline-primary"> <i
+                        class="fa fa-plus"></i> Inserir Cliente
+                </a>
+            </div>
+        </div>
+        @if (session()->has('sucesso'))
+            <div class="alert alert-success">
+                {{ session('sucesso') }}
+            </div>
+        @endif
+        @if (session()->has('erro'))
+            <div class="alert alert-danger">
+                {{ session('erro') }}
+            </div>
+        @endif
         <table class="vendas mt-5 table text-center">
             <thead>
                 <tr>
@@ -34,10 +53,10 @@
                         </td>
 
                         <td class="d-flex  flex-row flex-wrap">
-                            <a href="{{ route('vendas.editar', ['id' => $cliente->id]) }}"role="button"
+                            <a href="{{ route('clientes.editar', ['id' => $cliente->id]) }}"role="button"
                                 class=" btn btn-success mr-1 ml-1"><i class="fa fa-pen"></i>
     </div>
-    <a href="{{ route('vendas.excluir', ['id' => $cliente->id]) }}"role="button" class=" btn btn-danger"><i
+    <a href="{{ route('clientes.excluir', ['id' => $cliente->id]) }}"role="button" class=" btn btn-danger"><i
             class="fa fa-trash"></i></div>
         </td>
         </tr>

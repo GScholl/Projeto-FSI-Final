@@ -17,7 +17,8 @@ return new class extends Migration
             $table->text('descricao')->nullable();
             $table->float('valor');
             $table->date('data_compra');
-            $table->foreignId('cliente_id')->constrained("cliente");
+            $table->foreignId('cliente_id')->constrained("cliente")->onUpdate('cascade')   // Ação a ser realizada na atualização da chave estrangeira
+                ->onDelete('cascade');
             $table->char("status", 1)->nullable();
             $table->timestamps();
         });

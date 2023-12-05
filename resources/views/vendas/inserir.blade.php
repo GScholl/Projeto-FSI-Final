@@ -12,15 +12,15 @@
             <div class="col-12">
                 <form action="{{ route('vendas.inserir') }}" method="post">
                     @csrf
-                    <input type="hidden" name="id" value="">
+
                     <label class="mb-2"for="titulo">Título:</label>
-                    <input type="text" name="titulo" value=""class="form-control"
+                    <input type="text" name="titulo" class="form-control"
                         placeholder="Digite o Título">
                     <label class="mb-2"for="descricao">Descrição:</label>
-                    <input type="text" name="descricao" value=""class="form-control"
+                    <input type="text" name="descricao" class="form-control"
                         placeholder="Digite a Descrição">
                     <label class="mb-2" for="valor">Valor:</label>
-                    <input type="number" name="valor" max="100000000" min="0" value="" class="form-control"
+                    <input type="number" name="valor" max="100000000" min="0"  class="form-control"
                         placeholder="Digite o Valor">
                         <label for="cliente_id">Cliente</label>
                     <select name="cliente_id" class="form-control">
