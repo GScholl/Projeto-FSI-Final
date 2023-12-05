@@ -1,0 +1,28 @@
+body{
+    margin-top: 130px;
+}
+th, td{
+    font-size:10pt ;
+}
+
+tr th{
+
+	background-color: lightgray;
+	border: 1px solid lightgray;
+}
+
+thead{
+    background-color: lightgray!important;
+}
+table:not(.cabecalho-2) {
+    border-collapse: collapse;
+    /* Mescla as bordas das células */
+    border-spacing: 0;
+    /* Define o espaçamento entre as células como zero */
+}
+.comprovante-escolar,.comprovante-vacinacao{
+    text-align: center!important;
+}
+td,th{
+   text-align: start;
+}
