@@ -27,7 +27,7 @@ class ClienteController extends Controller
             ->groupBy('mes')
             ->orderBy('mes')
             ->get();
-
+    // teste
         return json_encode($query);
     }
     public function index()
